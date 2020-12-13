@@ -50,3 +50,16 @@ collections:
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Link, name: link, widget: string}
+
+  - name: employers
+    label: Employers
+    folder: content/employers
+    media_folder: /static/img/employers
+    public_folder: /img/employers
+    create: true
+    editor:
+        preview: false
+    slug: '{{employer}}'
+    fields:
+      - {label: Employer, name: employer, widget: string}
+      - {label: Logo, name: logo, widget: image}
