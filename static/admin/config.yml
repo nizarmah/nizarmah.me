@@ -25,3 +25,17 @@ collections:
     fields:
       - {label: Tool, name: tool, widget: string}
       - {label: Icon, name: icon, widget: image}
+
+  - name: repos
+    label: Repositories
+    folder: content/repos
+    create: true
+    editor:
+      preview: false
+    slug: '{{repo}}'
+    fields:
+      - {label: Repository, name: repo, widget: string}
+      - {label: Link, name: link, widget: string}
+      - {label: Tools, name: tools, widget: relation,
+          collection: tools, searchFields: ['tool'],
+          displayFields: ['tool'], multiple: true}
