@@ -78,3 +78,17 @@ collections:
       - {label: Position, name: position, widget: string}
       - {label: Start, name: start, widget: string}
       - {label: End, name: end, widget: string}
+
+  - name: socials
+    label: Socials
+    folder: content/socials
+    media_folder: /static/img/socials
+    public_folder: /img/socials
+    create: true
+    editor:
+      preview: false
+    slug: '{{name}}'
+    fields:
+      - {label: Name, name: name, widget: string}
+      - {label: Icon, name: icon, widget: image}
+      - {label: Link, name: link, widget: string}
