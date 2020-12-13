@@ -11,3 +11,17 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+
+collections:
+  - name: tools
+    label: Tools
+    folder: content/tools
+    media_folder: /static/img/tools
+    public_folder: /img/tools
+    create: true
+    editor:
+      preview: false
+    slug: '{{tool}}'
+    fields:
+      - {label: Tool, name: tool, widget: string}
+      - {label: Icon, name: icon, widget: image}
