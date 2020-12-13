@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: sitedata
+  branch: main
   squash_merges: true
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
@@ -13,24 +13,102 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: oscontribs
-    label: Open Source Contributions
-    folder: content/opensource/contributions
-    media_folder: /static/img/opensource
-    public_folder: /img/
+  - name: tools
+    label: Tool
+    folder: content/tools
+    media_folder: /static/img/tools
+    public_folder: /img/tools
     create: true
     editor:
       preview: false
+    slug: '{{tool}}'
     fields:
-      - {label: Repo, name: repo, widget: string}
+      - {label: Tool, name: tool, widget: string}
+      - {label: Icon, name: icon, widget: image}
 
-  - name: osprojects
-    label: Open Source Projects
-    folder: content/opensource/projects
-    media_folder: /static/img/opensource
-    public_folder: /img/
+  - name: repos
+    label: Repository
+    folder: content/repos
     create: true
     editor:
       preview: false
+    slug: '{{repo}}'
     fields:
-      - {label: Repo, name: repo, widget: string}
+      - {label: Repository, name: repo, widget: string}
+      - {label: Link, name: link, widget: string}
+      - {label: Tools, name: tools, widget: relation,
+          collection: tools, search_fields: ['tool'],
+          display_fields: ['tool'], multiple: true,
+          value_field: tool}
+
+  - name: posts
+    label: Blog Post
+    folder: content/posts
+    create: true
+    editor:
+      preview: false
+    slug: '{{title}}'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Link, name: link, widget: string}
+
+  - name: employers
+    label: Employer
+    folder: content/employers
+    media_folder: /static/img/employers
+    public_folder: /img/employers
+    create: true
+    editor:
+        preview: false
+    slug: '{{employer}}'
+    fields:
+      - {label: Employer, name: employer, widget: string}
+      - {label: Logo, name: logo, widget: image}
+
+  - name: jobs
+    label: Work Experience
+    folder: content/jobs
+    create: true
+    editor:
+      preview: false
+    slug: '{{employer}} - {{position}}'
+    fields:
+      - {label: Employer, name: employer, widget: relation,
+          collection: employers, search_fields: ['employer'],
+          display_fields: ['employer'], multiple: true,
+          value_field: employer}
+      - {label: Position, name: position, widget: string}
+      - {label: Start, name: start, widget: string}
+      - {label: End, name: end, widget: string}
+
+  - name: socials
+    label: Social Link
+    folder: content/socials
+    media_folder: /static/img/socials
+    public_folder: /img/socials
+    create: true
+    editor:
+      preview: false
+    slug: '{{name}}'
+    fields:
+      - {label: Name, name: name, widget: string}
+      - {label: Icon, name: icon, widget: image}
+      - {label: Link, name: link, widget: string}
+
+  - name: pages
+    label: Pages
+    files:
+      - name: index
+        label: Landing Page
+        file: content/pages/index.md
+        fields:
+          - {label: Header, name: header, string}
+          - {label: Open Source Contributions, name: contribs,
+              widget: relation, collection: repos, search_fields: ['repo'],
+              display_fields: ['repo'], multiple: true, value_field: repo}
+          - {label: Open Source Projects, name: projects,
+              widget: relation, collection: repos, search_fields: ['repo'],
+              display_fields: ['repo'], multiple: true, value_field: repo}
+          - {label: Blog Posts, name: posts,
+              widget: relation, collection: posts, search_fields: ['title'],
+              display_fields: ['title'], multiple: true, value_field: title}
