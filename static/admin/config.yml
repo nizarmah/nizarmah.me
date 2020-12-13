@@ -103,30 +103,12 @@ collections:
         file: content/pages/index.md
         fields:
           - {label: Header, name: header, string}
-          - name: contribs
-            label: Open Source Contributions
-            widget: object
-            collapsed: false
-            fields:
-              - {label: Repository, name: repo, widget: relation,
-                  collection: repos, search_fields: ['repo'],
-                  display_fields: ['repo'], multiple: true,
-                  value_field: repo}
-          - name: projects
-            label: Open Source Projects
-            widget: object
-            collapsed: false
-            fields:
-              - {label: Repository, name: repo, widget: relation,
-                  collection: repos, search_fields: ['repo'],
-                  display_fields: ['repo'], multiple: true,
-                  value_field: repo}
-          - name: posts
-            label: Blog Posts
-            widget: object
-            collapsed: false
-            fields:
-              - {label: Blog Post, name: post, widget: relation,
-                  collection: posts, search_fields: ['title'],
-                  display_fields: ['title'], multiple: true,
-                  value_field: title}
+          - {label: Open Source Contributions, name: contribs,
+              widget: relation, collection: repos, search_fields: ['repo'],
+              display_fields: ['repo'], multiple: true, value_field: repo}
+          - {label: Open Source Projects, name: projects,
+              widget: relation, collection: repos, search_fields: ['repo'],
+              display_fields: ['repo'], multiple: true, value_field: repo}
+          - {label: Blog Posts, name: posts,
+              widget: relation, collection: posts, search_fields: ['title'],
+              display_fields: ['title'], multiple: true, value_field: title}
