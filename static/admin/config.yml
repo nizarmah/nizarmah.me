@@ -14,7 +14,7 @@ public_folder: /img
 
 collections:
   - name: tools
-    label: Tools
+    label: Tool
     folder: content/tools
     media_folder: /static/img/tools
     public_folder: /img/tools
@@ -27,7 +27,7 @@ collections:
       - {label: Icon, name: icon, widget: image}
 
   - name: repos
-    label: Repositories
+    label: Repository
     folder: content/repos
     create: true
     editor:
@@ -42,7 +42,7 @@ collections:
           value_field: tool}
 
   - name: posts
-    label: Blog Posts
+    label: Blog Post
     folder: content/posts
     create: true
     editor:
@@ -53,7 +53,7 @@ collections:
       - {label: Link, name: link, widget: string}
 
   - name: employers
-    label: Employers
+    label: Employer
     folder: content/employers
     media_folder: /static/img/employers
     public_folder: /img/employers
@@ -66,7 +66,7 @@ collections:
       - {label: Logo, name: logo, widget: image}
 
   - name: jobs
-    label: Work Experiences
+    label: Work Experience
     folder: content/jobs
     create: true
     editor:
@@ -82,7 +82,7 @@ collections:
       - {label: End, name: end, widget: string}
 
   - name: socials
-    label: Socials
+    label: Social Link
     folder: content/socials
     media_folder: /static/img/socials
     public_folder: /img/socials
