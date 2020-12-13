@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: nizar/cms_collections
   squash_merges: true
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
