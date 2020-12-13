@@ -102,35 +102,31 @@ collections:
         label: Landing Page
         file: content/pages/index.md
         fields:
-          - name: sections
-            label: Sections
-            widget: list
-            allow_add: false
+          - {label: Header, name: header, string}
+          - name: contribs
+            label: Open Source Contributions
+            widget: object
+            collapsed: false
             fields:
-              - name: contribs
-                label: Open Source Contributions
-                widget: object
-                collapsed: false
-                fields:
-                  - {label: Repository, name: repo, widget: relation,
-                      collection: repos, search_fields: ['repo'],
-                      display_fields: ['repo'], multiple: true,
-                      value_field: repo}
-              - name: projects
-                label: Open Source Projects
-                widget: object
-                collapsed: false
-                fields:
-                  - {label: Repository, name: repo, widget: relation,
-                      collection: repos, search_fields: ['repo'],
-                      display_fields: ['repo'], multiple: true,
-                      value_field: repo}
-              - name: posts
-                label: Blog Posts
-                widget: object
-                collapsed: false
-                fields:
-                  - {label: Blog Post, name: post, widget: relation,
-                      collection: posts, search_fields: ['title'],
-                      display_fields: ['title'], multiple: true,
-                      value_field: title}
+              - {label: Repository, name: repo, widget: relation,
+                  collection: repos, search_fields: ['repo'],
+                  display_fields: ['repo'], multiple: true,
+                  value_field: repo}
+          - name: projects
+            label: Open Source Projects
+            widget: object
+            collapsed: false
+            fields:
+              - {label: Repository, name: repo, widget: relation,
+                  collection: repos, search_fields: ['repo'],
+                  display_fields: ['repo'], multiple: true,
+                  value_field: repo}
+          - name: posts
+            label: Blog Posts
+            widget: object
+            collapsed: false
+            fields:
+              - {label: Blog Post, name: post, widget: relation,
+                  collection: posts, search_fields: ['title'],
+                  display_fields: ['title'], multiple: true,
+                  value_field: title}
