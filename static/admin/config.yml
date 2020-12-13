@@ -39,3 +39,14 @@ collections:
       - {label: Tools, name: tools, widget: relation,
           collection: tools, searchFields: ['tool'],
           displayFields: ['tool'], multiple: true}
+
+  - name: posts
+    label: Blog Posts
+    folder: content/posts
+    create: true
+    editor:
+      preview: false
+    slug: '{{title}}'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - {label: Link, name: link, widget: string}
