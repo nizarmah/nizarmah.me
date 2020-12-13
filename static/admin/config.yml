@@ -21,6 +21,8 @@ collections:
     create: true
     editor:
       preview: false
+    fields:
+      - {label: Repo, name: repo, widget: string}
 
   - name: osprojects
     label: Open Source Projects
@@ -30,3 +32,5 @@ collections:
     create: true
     editor:
       preview: false
+    fields:
+      - {label: Repo, name: repo, widget: string}
