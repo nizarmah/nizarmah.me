@@ -63,3 +63,18 @@ collections:
     fields:
       - {label: Employer, name: employer, widget: string}
       - {label: Logo, name: logo, widget: image}
+
+  - name: jobs
+    label: Work Experiences
+    folder: content/jobs
+    create: true
+    editor:
+      preview: false
+    slug: '{{employer}} - {{position}}'
+    fields:
+      - {label: Employer, name: employer, widget: relation,
+          collection: employers, searchFields: ['employer'],
+          displayFields: ['employer'], multiple: true}
+      - {label: Position, name: position, widget: string}
+      - {label: Start, name: start, widget: string}
+      - {label: End, name: end, widget: string}
