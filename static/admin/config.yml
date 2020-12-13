@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: sitedata
+  branch: main
   squash_merges: true
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
@@ -11,26 +11,3 @@ backend:
 
 media_folder: static/img
 public_folder: /img
-
-collections:
-  - name: oscontribs
-    label: Open Source Contributions
-    folder: content/opensource/contributions
-    media_folder: /static/img/opensource
-    public_folder: /img/
-    create: true
-    editor:
-      preview: false
-    fields:
-      - {label: Repo, name: repo, widget: string}
-
-  - name: osprojects
-    label: Open Source Projects
-    folder: content/opensource/projects
-    media_folder: /static/img/opensource
-    public_folder: /img/
-    create: true
-    editor:
-      preview: false
-    fields:
-      - {label: Repo, name: repo, widget: string}
